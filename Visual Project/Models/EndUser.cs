@@ -11,6 +11,7 @@ namespace Visual_Project.Models
     {
         [Key]
         [Required]
+        [UniqueUserID(ErrorMessage = "This ID already in use. Please choose a different ID.")]
         [RegularExpression("[0-9]{14}" ,ErrorMessage = "Please enter 14 digits for Your ID")]
         public string ID { get; set; }
         [Required]
@@ -22,11 +23,13 @@ namespace Visual_Project.Models
 
         [Required]
         [DataType(DataType.EmailAddress)]
+        [UniqueEmail(ErrorMessage = "Email already in use. Please choose a different email.")]
         [RegularExpression(@"^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([-.][a-zA-Z0-9]+)*\.[a-z]{2,6}$",
          ErrorMessage="This Email Address not Valid.")]
         public string Email { get; set; }
 
         [Required]
+        [UniqueUsername(ErrorMessage = "Username already in use. Please choose a different username.")]
         [RegularExpression(@"^[a-zA-Z]+[a-zA-Z0-9-_.]{3,20}$",
         ErrorMessage = "Numbers are not permitted at the beginning,No space char is permitted ")]
         public string Username { get; set; }
@@ -34,53 +37,65 @@ namespace Visual_Project.Models
         [Required]
         [DataType(DataType.Password)]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+{};:'"",.<>/?[\]\\|]).{8,}$", 
-        ErrorMessage = "The Password must contains at least one of all of this (lowercase character, uppercase, digit, special character).")]
+        ErrorMessage = "The Password must be at least 8 characters and contains at least one of all of this (lowercase character, uppercase, digit, special character).")]
         public string Password { get; set; }
 
         [Required]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression("[0-9]{11}", ErrorMessage = "Please enter 11 digits for Your PhoneNumber")]
         public string PhoneNumber { get; set; }
-        //[AllowNull] // allows the property to be assigned a null value
-        //[Required(AllowEmptyStrings = true)] // ensures that if the value is not null, it cannot be an empty string
 
-        //public string? Image { get; set; }
+        public class UniqueUserIDAttribute : ValidationAttribute
+        {
+            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+            {
+                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); // Replace YourDbContext with the actual DbContext class name
+                var id = context.ToString();
+                var existingUser = context.Users.FirstOrDefault(userID => userID.ID == id);
+
+                if (existingUser != null)
+                {
+                    return new ValidationResult(ErrorMessage);
+                }
+
+                return ValidationResult.Success;
+            }
+        }
+
+        public class UniqueUsernameAttribute : ValidationAttribute
+        {
+            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+            {
+                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); // Replace YourDbContext with the actual DbContext class name
+                var username = context.ToString();
+                var existingUser = context.Users.FirstOrDefault(userName => userName.Username == username);
+
+                if (existingUser != null)
+                {
+                    return new ValidationResult(ErrorMessage);
+                }
+
+                return ValidationResult.Success;
+            }
+        }
+        public class UniqueEmailAttribute : ValidationAttribute
+        {
+            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+            {
+                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); // Replace YourDbContext with the actual DbContext class name
+                var email = context.ToString();
+                var existingUser = context.Users.FirstOrDefault(userEmail => userEmail.Email == email);
+
+                if (existingUser != null)
+                {
+                    return new ValidationResult(ErrorMessage);
+                }
+
+                return ValidationResult.Success;
+            }
+        }
 
 
-        //public static int Type(EndUser user)
-        //{
-        //    using (HotelDbContext dbContext = new HotelDbContext())
-        //    {
 
-
-        //        var is_Guest = dbContext.Guests.Any(guest => guest.Username == user.Username);
-        //        var is_Admin = dbContext.Admins.Any(admin => admin.Username == user.Username);
-        //        // User is Guest
-        //        if (is_Guest)
-        //        {
-        //            var guest = dbContext.Guests.FirstOrDefault(gst => gst.Username == user.Username);
-        //            //if (SecretHasher.HashPassword($"{user.Password}{guest.Salt}") == guest.Password)
-        //            if (BCrypt.Net.BCrypt.EnhancedVerify(user.Password, guest.Password));
-        //            {
-        //                return 1;
-        //            }
-        //        }
-        //        // User is Admin
-        //        if (is_Admin)
-        //        {
-        //            var admin = dbContext.Admins.FirstOrDefault(admin => admin.Username == user.Username);
-        //            //if (SecretHasher.HashPassword($"{user.Password}{admin.Salt}") == admin.Password)
-        //            if (BCrypt.Net.BCrypt.EnhancedVerify(user.Password, admin.Password));
-        //            {
-        //                // Adimn is Receptionist
-        //                if (admin.Type == "Receptionist")
-        //                    return 2;
-        //                else // Admin is Manager
-        //                    return 3;
-        //            }
-        //        }
-        //        return 0;
-        //    }
-        //}
     }
 }

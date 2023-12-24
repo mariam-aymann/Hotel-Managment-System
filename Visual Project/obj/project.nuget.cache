@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5nyPmjTL/ryqobS1f+/fAJzqMrV7BRPKN/3NYazlI+g9Mkc8d4aoPF6kBLws7yHhAVfnME6lLSduHIfbYFZtpA==",
+  "dgSpecHash": "Dp/nqfS38/22Io1qVMgXTieRmLeFHbczZgQcntQOtwc+8RYJ5gcfXELBcDozoW4b9ULlWlLcB5POMlb2nYFo+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mariam Adel\\Desktop\\vp-mariam-Hassan\\Visual Project\\Visual Project\\Visual Project.csproj",
+  "projectFilePath": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\Visual Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mariam Adel\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Mariam Adel\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

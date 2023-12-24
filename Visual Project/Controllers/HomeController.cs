@@ -122,7 +122,9 @@ namespace Visual_Project.Controllers
                 guest.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(guest.Password, 13);
                 DbContext.Guests.Add(guest);
                 DbContext.SaveChanges();
-                return View("Login");
+                if(HttpContext.Session.GetString("Type")!="Guest")
+                 return View("Index");
+                else  return View("Login");
             }
             return View();
         }

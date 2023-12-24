@@ -7,14 +7,14 @@
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center pb-5">
             <h1 class="display-3 text-white mb-3 animated slideInDown">
-                Add Admin
+                Remove Admin
             </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item text-white active"
                         aria-current="page">
-                        Add Admin
+                       Remove Admin
                     </li>
                 </ol>
             </nav>
@@ -44,7 +44,7 @@
                                             <td>@admin.ID</td>
                                             <td>@admin.Username</td>
                                             <td>
-                                                <a class="btn btn-primary py-3 px-5 mt-2" asp-controller="Admin" asp-action="RemoveAdmin" asp-route-id="@admin.ID">Delete</a>
+                                                <a class="btn btn-primary py-3 px-5 mt-2" asp-controller="ManageAdmins" asp-action="RemoveAdmin" asp-route-id="@admin.ID">Delete</a>
                                             </td>
                                         </tr>
                                         // Console.WriteLine($"Id: {admin.ID}, -Username: {admin.UserName}");

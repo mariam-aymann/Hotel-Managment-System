@@ -5,15 +5,19 @@ using Visual_Project.Models;
 
 namespace Visual_Project.Controllers
 {
-    public class AdminController : Controller
+    public class ManageAdminsController : Controller
     {
         private readonly HotelDbContext DbContext;
-        public AdminController(HotelDbContext context)
+        public ManageAdminsController(HotelDbContext context)
         {
             DbContext = context;
         }
-      //  HotelDbContext DbContext= new HotelDbContext();
+        //  HotelDbContext DbContext= new HotelDbContext();
 
+        public IActionResult ManageAdmins()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult AddAdmin()
         {
@@ -24,13 +28,13 @@ namespace Visual_Project.Controllers
         public IActionResult AddAdmin(Admin addmin)
         {
 
-            //  Admin.AddAdmin(addmin);
+           
             if (ModelState.IsValid)
             {
                 addmin.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(addmin.Password, 13);
                 DbContext.Admins.Add(addmin);
                 DbContext.SaveChanges();
-                return RedirectToAction("AdminResult", "Admin");
+                return RedirectToAction("AdminResult", "ManageAdmins");
             }
             return View();
         }
@@ -38,10 +42,9 @@ namespace Visual_Project.Controllers
         public IActionResult AdminResult()
         {
             List<Admin> admins = new List<Admin>();
-            // admins =Admin.GetAdmins();
+           
             admins = DbContext.Admins.ToList();
 
-       
             return View("AdminResult", admins);
         }
        
@@ -54,12 +57,12 @@ namespace Visual_Project.Controllers
 
                 if (adminToRemove != null)
                 {
-                    // Remove the admin
+                   
                     DbContext.Admins.Remove(adminToRemove);
                     DbContext.SaveChanges();
                 }
                 // Optionally, you can redirect or return a success message
-                return RedirectToAction("AdminResult", "Admin"); // Redirect to the admin list, adjust as needed
+                return RedirectToAction("AdminResult", "ManageAdmins"); // Redirect to the admin list, adjust as needed
 
 
             }

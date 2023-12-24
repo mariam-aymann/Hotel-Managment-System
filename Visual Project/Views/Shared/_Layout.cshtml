@@ -84,7 +84,7 @@
                                     <a asp-controller="Home" asp-action="Services" class="nav-item nav-link">Services</a>
                                     @if (user != null)
                                     {
-                                        @if (Context.Session.GetString("CheckInDate") != null)
+                                        @if (Context.Session.GetString("CheckInDate") != null && Context.Session.GetString("CheckInDate") != "")
                                         {
                                             <a asp-controller="Rooms" asp-action="Search" class="nav-item nav-link">Book</a>
                                         }
@@ -113,8 +113,8 @@
                                                 <a asp-controller="Profile" asp-action="Profile" class="dropdown-item">Profile</a>
                                                 <a asp-controller="Statistics" asp-action="Statistics" class="dropdown-item">Statistics</a>
                                                 <a asp-controller="Home" asp-action="ManageDetails" class="dropdown-item">Manage Room Details</a>
-                                                <a asp-controller="Admin" asp-action="AddAdmin" class="dropdown-item">Add Admin</a>
-                                                <a asp-controller="Admin" asp-action="AdminResult" class="dropdown-item">Remove Admin</a>
+                                                <a asp-controller="ManageAdmins" asp-action="ManageAdmins" class="dropdown-item">Manage Admins</a>
+                                                <a asp-controller="Cart" asp-action="ShowCart" class="dropdown-item">Cart</a>
                                                 <a asp-controller="Profile" asp-action="Logout" class="dropdown-item">Logout</a>
 
                                             </div>
@@ -126,6 +126,7 @@
                                                 <a asp-controller="Profile" asp-action="Profile" class="dropdown-item">Profile</a>
                                                 <a asp-controller="Reservations" asp-action="CurrentReservations" class="dropdown-item">Current Reservations</a>
                                                 <a asp-controller="Home" asp-action="SignUp" class="dropdown-item">Add Guest</a>
+                                                <a asp-controller="Cart" asp-action="ShowCart" class="dropdown-item">Cart</a>
                                                 <a asp-controller="Profile" asp-action="Logout" class="dropdown-item">Logout</a>
 
                                             </div>

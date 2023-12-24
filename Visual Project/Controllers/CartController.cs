@@ -46,7 +46,7 @@ namespace Visual_Project.Controllers
             foreach (var room in cart)
             {
                 AmountOfReservation += room.Price;
-               // Console.WriteLine(room.ID);
+              
             }
             foreach (var room in cart)
             {
@@ -56,7 +56,7 @@ namespace Visual_Project.Controllers
             reservation.CheckInDate = DateTime.Parse(HttpContext.Session.GetString("CheckInDate"));
             reservation.CheckOutDate = DateTime.Parse(HttpContext.Session.GetString("CheckOutDate"));
             reservation.PaymentAmount = AmountOfReservation;
-          //  reservation.ID = "4";
+         
             if (HttpContext.Session.GetString("Type") == "Guest")
             {
                 var username = HttpContext.Session.GetString("Username");
