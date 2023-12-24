@@ -1,0 +1,108 @@
+﻿@model Guest
+@{
+}
+<head>
+    <title>Edit Profile</title>
+</head>
+
+
+ 
+        <!-- title Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">Edit Profile</h6>
+                    <h1 class="mb-5">
+                @Model.Username <span class="text-primary text-uppercase">
+                        </span>
+                    </h1>
+                </div>
+                <!-- title End -->
+                <!-- Booking Start -->
+        
+                <div class="container-xxl py-5">
+                    <div class="container">
+
+                        <div class="row g-5">
+                            <div class="col-lg-6">
+                                <div class="row g-3">
+                                    <div class="col-6 text-end">
+                                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s"
+                                             src="img/about-1.jpg" style="margin-top: 25%;">
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s"
+                                             src="img/about-2.jpg">
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s"
+                                             src="img/about-3.jpg">
+                                    </div>
+
+                                </div>
+                            </div>
+                    <div class="col-lg-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form method="post" asp-action="EditProfile">
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="first name" placeholder="First Name" asp-for="@Model.Firstname" required pattern="[A-Z][a-z]*" title="Please enter the fisrt character capital and the other character small">
+                                            <label for="first name">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="last name" placeholder="Last Name" asp-for="@Model.Lastname" required pattern="[A-Z][a-z]*" title="Please enter the fisrt character capital and the other character small">
+                                            <label for="last name">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating" id="email" data-target-input="nearest">
+                                            <input type="email" class="form-control datetimepicker-input" id="Email" placeholder="email" asp-for="@Model.Email" data-target="#date3" data-toggle="datetimepicker" required />
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating" id="phone num" data-target-input="nearest">
+                                            <input type="tel" class="form-control datetimepicker-input" id="Phone Number" placeholder="phone num" asp-for="@Model.PhoneNumber" data-target="#date3" data-toggle="datetimepicker" pattern="[0-9]{11}" title="Please enter exactly 11 digits" required />
+                                            <label for="phone num">Phone Number</label>
+                                        </div>
+                                    </div>
+
+                                   
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" id="password" placeholder="Password" asp-for="@Model.Password" required>
+                                            <label for="password">Password</label>
+                                        </div>
+                                    </div>
+                                 @*    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" id="confirmpassword" placeholder="ConfimedPassword" asp-for="@Model.PasswordConfirmed" required>
+                                            <label for="confirmpassword">Password</label>
+                                        </div>
+                                    </div> *@
+
+                                   @*  <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input class="form-control" type="file" id="imageInput" accept="image/*" onchange="readURL(this)" asp-for="@Model.Image" required>
+                                            <label for="imageInput">Image</label>
+                                        </div>
+                                    </div> *@
+                                    <div class="col-12">
+                                    </div>
+                                    <div class="col-12">
+                                    </div>
+                                    <input class="btn btn-primary py-3 px-5 mt-2" type="submit" value="Save Edits" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Booking End -->
+

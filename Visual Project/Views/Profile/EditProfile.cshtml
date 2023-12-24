@@ -1,0 +1,71 @@
+﻿@model Guest
+@{
+    var user = ViewBag.user;
+}
+
+<!-- title Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Edit Profile</h6>
+            <h1 class="mb-5">
+                @user.Username <span class="text-primary text-uppercase">
+                </span>
+            </h1>
+        </div>
+        <!-- title End -->
+        <!-- Booking Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+
+                <div class="row g-5">
+
+                    <div class="col-lg-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form method="post" asp-action="EditProfileDetails">
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Firstname"
+                                                   placeholder="First Name">
+                                            <label for="first name">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" name="Lastname"
+                                                   placeholder="Second Name">
+                                            <label for="second name">Second Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating" id="email" data-target-input="nearest">
+                                            <input type="email" class="form-control datetimepicker-input"
+                                                   name="Email" placeholder="email" data-target="#date3"
+                                                   data-toggle="datetimepicker" />
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating" id="phone num" data-target-input="nearest">
+                                            <input type="tel" class="form-control datetimepicker-input"
+                                                   name="PhoneNumber" placeholder="Phone Number" data-target="#date4"
+                                                   data-toggle="datetimepicker" />
+                                            <label for="phone num">Phone Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" name="Password" placeholder="ID">
+                                            <label for="id">Password</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary py-3 px-5 mt-2">Save Edits</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

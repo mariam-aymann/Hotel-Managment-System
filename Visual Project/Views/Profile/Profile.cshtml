@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var user = ViewBag.user;
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Profile</h6>
+            <h1 class="mb-5">
+                @user.Username <span class="text-primary text-uppercase">
+                </span>
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- title End -->
+<!-- Main -->
+<div class="main">
+
+    <div class="card">
+        <div class="card-body">
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td> @user.Firstname @user.Lastname</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td> @user.Email</td>
+                    </tr>
+
+                    <tr>
+                        <td>National ID</td>
+                        <td>:</td>
+                        <td>@user.ID</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>:</td>
+                        <td> @user.PhoneNumber</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a class="btn btn-primary py-3 px-5 mt-2" asp-controller="Profile" asp-action="EditProfile">Edit Profile</a>
+</div>
