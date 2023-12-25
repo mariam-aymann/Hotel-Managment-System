@@ -18,56 +18,53 @@ namespace Visual_Project.Controllers
             var username = HttpContext.Session.GetString("Username");
            
 
-            var guest = (from user in dbcontext.Guests
+            var CurUser = (from user in dbcontext.Users
                          where user.Username == username
                          select user).FirstOrDefault();
 
-            var admin = (from user in dbcontext.Admins
-                         where user.Username == username
-                         select user).FirstOrDefault();
-
-           // Console.WriteLine(guest.Username);
-            if (guest != null) ViewBag.user = guest;
-            else ViewBag.user = admin;
-            return View();
+           
+            return View(CurUser);
         }
 
         public IActionResult EditProfile()
         {
             var username = HttpContext.Session.GetString("Username");
-            var guest = (from user in dbcontext.Guests
-                         where user.Username == username
-                         select user).FirstOrDefault();
 
-            var admin = (from user in dbcontext.Admins
-                         where user.Username == username
-                         select user).FirstOrDefault();
 
-            if (guest != null) ViewBag.user = guest;
-            else ViewBag.user = admin;
-            return View();
+            var CurUser = (from user in dbcontext.Users
+                           where user.Username == username
+                           select user).FirstOrDefault();
+
+
+            return View(CurUser);
         }
         [HttpPost]
-        public IActionResult EditProfileDetails(Guest updateGuest)
+        public IActionResult EditProfileDetails(EndUser updateUser)
         {
             var username = HttpContext.Session.GetString("Username");
-            var guest = (from user in dbcontext.Guests
-                         where username == user.Username
-                         select user).FirstOrDefault();
+    
+            var CurUser = (from user in dbcontext.Users
+                           where user.Username == username
+                           select user).FirstOrDefault();
+
+
            
+                if (updateUser.Firstname != null)
+                    CurUser.Firstname = updateUser.Firstname;
+                if (updateUser.Lastname != null)
+                    CurUser.Lastname = updateUser.Lastname;
+                if (updateUser.Email != null)
+                    CurUser.Email = updateUser.Email;
+                if (updateUser.PhoneNumber != null)
+                    CurUser.PhoneNumber = updateUser.PhoneNumber;
+            if (updateUser.Password != null)
+            {
+                CurUser.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(updateUser.Password, 13);
+              //  CurUser.Password = updateUser.Password;
+            }
+                dbcontext.SaveChanges();
+                return RedirectToAction("Profile");
             
-            if (updateGuest.Firstname != null)
-                guest.Firstname = updateGuest.Firstname;
-            if (updateGuest.Lastname != null)
-                guest.Lastname = updateGuest.Lastname;
-            if (updateGuest.Email != null)
-                guest.Email = updateGuest.Email;
-            if (updateGuest.PhoneNumber != null)
-                guest.PhoneNumber = updateGuest.PhoneNumber;
-            if (updateGuest.Password != null)
-                guest.Password = updateGuest.Password;
-            dbcontext.SaveChanges();
-            return RedirectToAction("Profile");
         }
         public IActionResult Logout()
         {

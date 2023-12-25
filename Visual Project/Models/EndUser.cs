@@ -49,8 +49,8 @@ namespace Visual_Project.Models
         {
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
-                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); // Replace YourDbContext with the actual DbContext class name
-                var id = context.ToString();
+                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); 
+                var id = value.ToString();
                 var existingUser = context.Users.FirstOrDefault(userID => userID.ID == id);
 
                 if (existingUser != null)
@@ -66,8 +66,8 @@ namespace Visual_Project.Models
         {
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
-                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); // Replace YourDbContext with the actual DbContext class name
-                var username = context.ToString();
+                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); 
+                var username = value.ToString();
                 var existingUser = context.Users.FirstOrDefault(userName => userName.Username == username);
 
                 if (existingUser != null)
@@ -82,8 +82,8 @@ namespace Visual_Project.Models
         {
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
-                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); // Replace YourDbContext with the actual DbContext class name
-                var email = context.ToString();
+                var context = (HotelDbContext)validationContext.GetService(typeof(HotelDbContext)); 
+                var email = value.ToString();
                 var existingUser = context.Users.FirstOrDefault(userEmail => userEmail.Email == email);
 
                 if (existingUser != null)

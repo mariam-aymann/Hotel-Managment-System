@@ -19,7 +19,7 @@ namespace Visual_Project.Controllers
         }
         public IActionResult RemoveFromCart(string id)
         {
-            Console.WriteLine(id);
+         //   Console.WriteLine(id);
 
             var cart = HttpContext.Session.Get<List<Room>>("ShoppingCart") ?? new List<Room>();
 

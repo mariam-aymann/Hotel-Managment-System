@@ -40,9 +40,9 @@ namespace Visual_Project.Controllers
            
                 reservation.CheckInDate = DateTime.Parse(reservation.CheckIn);
                 reservation.CheckOutDate = DateTime.Parse(reservation.CheckOut);
-
+            Console.WriteLine(reservation.CheckInDate);
                 var result = (from res in DbContext.Reservations
-                              where reservation.CheckInDate >= res.CheckInDate && reservation.CheckOutDate <= res.CheckOutDate
+                              where reservation.CheckInDate <= res.CheckInDate && reservation.CheckOutDate >= res.CheckOutDate
                               select res).ToList();
                 return View("DateResults", result);
           

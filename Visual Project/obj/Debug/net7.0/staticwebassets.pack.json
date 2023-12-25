@@ -29,6 +29,14 @@
       "PackagePath": "staticwebassets\\img\\Done-Sign2.jpg"
     },
     {
+      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Picture1.jpg",
+      "PackagePath": "staticwebassets\\img\\Picture1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Team.JPG",
+      "PackagePath": "staticwebassets\\img\\Team.JPG"
+    },
+    {
       "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\about-1.jpg",
       "PackagePath": "staticwebassets\\img\\about-1.jpg"
     },

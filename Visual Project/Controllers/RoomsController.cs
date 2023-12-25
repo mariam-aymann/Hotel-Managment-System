@@ -39,16 +39,14 @@ namespace Visual_Project.Controllers
 		public IActionResult Search(RoomViewModel room)
             
 		{
-  //          if (ModelState.IsValid)
-  //          {
+  
                 room.Check_inDate = HttpContext.Session.GetString("CheckInDate");
                 room.Check_OutDate = HttpContext.Session.GetString("CheckOutDate");
 
                 List<RoomViewModel> Results = new();
-                // Console.WriteLine(room.Room.Price);
-                //Results = RoomViewModel.Result(room);
+             
                 DateTime From = DateTime.Parse(room.Check_inDate), To = DateTime.Parse(room.Check_OutDate);
-                // Console.WriteLine(from);
+                
                 var roomclassid = (from roomclass in dbContext.RoomClasses
                                    where roomclass.Type == room.RoomType
                                    select roomclass.ID).First();
@@ -61,9 +59,15 @@ namespace Visual_Project.Controllers
                || reservation.CheckInDate >= To)
                && room.RoomClassID == roomclassid)
                .ToList();
-                //  foreach (var room in availableRooms) Console.WriteLine(room.Reservations.First().Check_outDate);
 
-                var rooms = (from rom in availableRooms
+            /*
+            var cart = HttpContext.Session.Get<List<Room>>("ShoppingCart") ?? new List<Room>();
+            var resultRooms = availableRooms.Where
+            (room => !cart.Any
+            (excludedRoom =>
+            excludedRoom.ID == room.ID)).ToList();
+             */
+            var rooms = (from rom in availableRooms
                              join roomclass in dbContext.RoomClasses
                              on rom.RoomClassID equals roomclass.ID
                              where rom.RoomClassID == roomclassid
@@ -84,19 +88,15 @@ namespace Visual_Project.Controllers
 
 
                 Results = rooms;
-                // return rooms;
+               
                 return View("Results", Results);
-            //}
-            //return View();
+          
 
 		}
 		public IActionResult AddToCart(string id)
 
 		{
-            //if (ModelState.IsValid)
-            //{
-
-                // Retrieve the user's cart based on user authentication (you may use a more secure approach)
+           
                 var username = HttpContext.Session.GetString("Username");
 
                 var user = dbContext.Guests.FirstOrDefault(u => u.Username == username);

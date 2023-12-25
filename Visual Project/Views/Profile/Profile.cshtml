@@ -1,16 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    var user = ViewBag.user;
-}
+﻿@model EndUser
 
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title text-center text-primary text-uppercase">Profile</h6>
             <h1 class="mb-5">
-                @user.Username <span class="text-primary text-uppercase">
+                @Model.Username <span class="text-primary text-uppercase">
                 </span>
             </h1>
         </div>
@@ -28,23 +23,23 @@
                     <tr>
                         <td>Name</td>
                         <td>:</td>
-                        <td> @user.Firstname @user.Lastname</td>
+                        <td> @Model.Firstname @Model.Lastname</td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td>:</td>
-                        <td> @user.Email</td>
+                        <td> @Model.Email</td>
                     </tr>
 
                     <tr>
                         <td>National ID</td>
                         <td>:</td>
-                        <td>@user.ID</td>
+                        <td>@Model.ID</td>
                     </tr>
                     <tr>
                         <td>Phone Number</td>
                         <td>:</td>
-                        <td> @user.PhoneNumber</td>
+                        <td> @Model.PhoneNumber</td>
                     </tr>
 
                 </tbody>

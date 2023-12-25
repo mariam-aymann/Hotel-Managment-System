@@ -23,14 +23,10 @@ namespace Visual_Project.Controllers
         [HttpPost]
         public IActionResult AddFeedBack(FeedBack feedback)
         {
-            if (ModelState.IsValid)
-            {
                 DbContext.FeedBacks.Add(feedback);
                 DbContext.SaveChanges();
-                //  FeedBack.AddFeedBack(feedback);
-                return View();
-            }
-            return View();
+         
+            return View("Index");
         }
 
 

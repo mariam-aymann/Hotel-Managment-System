@@ -5,6 +5,7 @@ using System.Transactions;
 using Visual_Project.Models;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Visual_Project.Controllers
 {
@@ -37,12 +38,14 @@ namespace Visual_Project.Controllers
       
   
         [HttpPost]
-        public IActionResult Login(EndUser user)
+        public IActionResult Login(UserLogin user)
         {
             
                 int userType = 0;
                 var is_Guest = DbContext.Guests.Any(guest => guest.Username == user.Username);
                 var is_Admin = DbContext.Admins.Any(admin => admin.Username == user.Username);
+
+  
                 // User is Guest
                 if (is_Guest)
                 {
@@ -122,7 +125,7 @@ namespace Visual_Project.Controllers
                 guest.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(guest.Password, 13);
                 DbContext.Guests.Add(guest);
                 DbContext.SaveChanges();
-                if(HttpContext.Session.GetString("Type")!="Guest")
+                if(HttpContext.Session.GetString("Type")!="Guest"&& !HttpContext.Session.GetString("Type").IsNullOrEmpty())
                  return View("Index");
                 else  return View("Login");
             }

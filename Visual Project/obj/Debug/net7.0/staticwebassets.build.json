@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4sC34bUDopSPj/IjPQv+EPf7ToEioIasHWxVvW2o0z0=",
+  "Hash": "ONKWFBprOxJ6M/hpn22KPysp6GGiH4GbGVoYjk/58Tg=",
   "Source": "Visual Project",
   "BasePath": "_content/Visual Project",
   "Mode": "Default",
@@ -255,6 +255,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Done-Sign2.jpg"
     },
     {
+      "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Picture1.jpg",
+      "SourceId": "Visual Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\",
+      "BasePath": "_content/Visual Project",
+      "RelativePath": "img/Picture1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Picture1.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\room-1.jpg",
       "SourceId": "Visual Project",
       "SourceType": "Discovered",
@@ -304,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\room-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Team.JPG",
+      "SourceId": "Visual Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\",
+      "BasePath": "_content/Visual Project",
+      "RelativePath": "img/Team.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Team.JPG"
     },
     {
       "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\team-1.jpg",

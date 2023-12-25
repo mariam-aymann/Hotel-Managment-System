@@ -15,8 +15,7 @@ namespace Visual_Project.Controllers
         {
             DbContext = context;
         }
-        //   HotelDbContext DbContext = new HotelDbContext();
-
+        
         // Add Room Controllers 
         [HttpGet]
         public IActionResult AddRoom()
@@ -26,9 +25,8 @@ namespace Visual_Project.Controllers
         [HttpPost]
         public IActionResult AddRoom(RoomViewModel room)
         {
-            if (ModelState.IsValid)
-            {
-                //RoomViewModel.AddRoom(room);
+          
+               
                 var roomclassid = (from roomclass in DbContext.RoomClasses
                                    where roomclass.Type == room.RoomType
                                    select roomclass.ID).First();
@@ -45,35 +43,33 @@ namespace Visual_Project.Controllers
                 DbContext.Rooms.Add(RoomToAdd);
                 DbContext.SaveChanges();
                 return RedirectToAction("ManageDetails", "Home");
-            }
-            return View();
+           
         }
 
         // Remove Room Controllers
         [HttpGet]
-        public IActionResult RemoveRoom()
+        public IActionResult RoomList()
         {
-            return View();
+            List<Room>result = DbContext.Rooms.ToList();
+            return View(result);
         }
-        [HttpPost]
+     
         public IActionResult RemoveRoom(string id)
         {
-            if (ModelState.IsValid)
-            {
+           Console.WriteLine(id);
 
-                // Fetch the admin from the database based on the provided identifier
+                
                 var roomToRemove = DbContext.Rooms.FirstOrDefault(room => room.ID == id);
 
                 if (roomToRemove != null)
                 {
-                    // Remove the admin
+                   
                     DbContext.Rooms.Remove(roomToRemove);
                     DbContext.SaveChanges();
                 }
-                // Optionally, you can redirect or return a success message
-                return RedirectToAction("ManageDetails", "Home"); // Redirect to the admin list, adjust as needed
-            }
-            return View();
+              
+                return RedirectToAction("RoomList", "ManageRoom"); 
+          
 
         }
 
