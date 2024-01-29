@@ -15,10 +15,10 @@ namespace Visual_Project.Models
         [RegularExpression("[0-9]{14}" ,ErrorMessage = "Please enter 14 digits for Your ID")]
         public string ID { get; set; }
         [Required]
-        [RegularExpression(@"^[a-zA-Z]{3,20}$", ErrorMessage = "No numbers allowed in the FirstName.")]
+        [RegularExpression(@"^[a-zA-Z]{3,20}$", ErrorMessage = "No numbers allowed in the FirstName and Minmum lengh is 3 and Mxmum lengh is 20")]
         public string Firstname { get; set; }
         [Required]
-        [RegularExpression(@"^[a-zA-Z]{3,20}$", ErrorMessage = "No numbers allowed in the LasttName.")]
+        [RegularExpression(@"^[a-zA-Z]{3,20}$", ErrorMessage = "No numbers allowed in the LasttName and Minmum lengh is 3 and Mxmum lengh is 20.")]
         public string Lastname { get; set; }
 
         [Required]
@@ -45,6 +45,8 @@ namespace Visual_Project.Models
         [RegularExpression("[0-9]{11}", ErrorMessage = "Please enter 11 digits for Your PhoneNumber")]
         public string PhoneNumber { get; set; }
 
+
+        public string? Image { get; set; }
         public class UniqueUserIDAttribute : ValidationAttribute
         {
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)

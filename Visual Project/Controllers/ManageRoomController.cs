@@ -84,9 +84,7 @@ namespace Visual_Project.Controllers
         [HttpPost]
         public IActionResult EditRoom(RoomViewModel roomView)
         {
-            if (ModelState.IsValid)
-            {
-
+          
                 var room = DbContext.Rooms.Find(roomView.RoomID);
                 var classRoom = (from roomclass in DbContext.RoomClasses
                                  where roomclass.Type == roomView.RoomType
@@ -101,8 +99,7 @@ namespace Visual_Project.Controllers
 
                 DbContext.SaveChanges();
                 return RedirectToAction("ManageDetails", "Home");
-            }
-            return View();
+            
         }
     }
 }

@@ -21,7 +21,7 @@
 
                     <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form method="post" asp-action="EditProfileDetails">
+                            <form method="post" asp-action="EditProfileDetails" enctype="multipart/form-data">
 
                                 <div class="row g-3">
 
@@ -49,14 +49,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating" id="phone num" data-target-input="nearest">
-                                            <input type="tel" class="form-control datetimepicker-input" id="Phone Number" placeholder="phone num" asp-for="@Model.PhoneNumber" data-target="#date3" data-toggle="datetimepicker" /> @*pattern="[0-9]{11}" title="Please enter exactly 11 digits" required/>*@
+                                            <input type="tel" class="form-control datetimepicker-input" id="Phone Number" placeholder="phone num" asp-for="@Model.PhoneNumber" data-target="#date3" data-toggle="datetimepicker" pattern="[0-9]{11}" title="Please enter exactly 11 digits" required/>
                                             <label for="phone num">Phone Number</label>
                                             <span asp-validation-for="PhoneNumber " class=" test-danger"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating" id="national id" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" id="National ID" placeholder="national id" asp-for="@Model.ID" data-target="#date3" data-toggle="datetimepicker" required /> @*inputmode="numeric" pattern="[0-9]{14}" autocomplete="cc-number" maxlength="14" title="Please enter exactly 14 digits"/>*@
+                                            <input type="text" class="form-control datetimepicker-input" id="National ID" placeholder="national id" asp-for="@Model.ID" data-target="#date3" data-toggle="datetimepicker" required inputmode="numeric" pattern="[0-9]{14}" autocomplete="cc-number" maxlength="14" title="Please enter exactly 14 digits"/>
                                             <label for="national id">National ID</label>
                                             <span asp-validation-for="ID " class=" test-danger"></span>
                                         </div>
@@ -72,14 +72,20 @@
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" id="password" placeholder="Password" asp-for="@Model.Password">
+                                            <input type="password" class="form-control" id="password" placeholder="Password" asp-for="@Model.Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="The Password must be at least 8 characters and contains at least one of all of this (lowercase character, uppercase, digit, special character">
                                             <label for="password">Password</label>
                                             <span asp-validation-for="Password " class=" test-danger"></span>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input class="form-control" type="file" id="imageInput" name="img_file" asp-for="@Model.Image">
+                                            <label for="imageInput">Image</label>
+                                        </div>
+                                    </div>
 
                                   
-                                    <input class="btn btn-primary py-3 px-5 mt-2" type="submit" value="Register" />
+                                    <input class="btn btn-primary py-3 px-5 mt-2" type="submit" value="Save Edits" />
                                 </div>
                             </form>
                         </div>

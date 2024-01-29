@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ONKWFBprOxJ6M/hpn22KPysp6GGiH4GbGVoYjk/58Tg=",
+  "Hash": "m+Zq2P7jcCI9eu3TDvcPCZFui67g9cn7JFKFncZAv0I=",
   "Source": "Visual Project",
   "BasePath": "_content/Visual Project",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\1.jpeg",
+      "SourceId": "Visual Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\",
+      "BasePath": "_content/Visual Project",
+      "RelativePath": "img/1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\1.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\about-1.jpg",
       "SourceId": "Visual Project",
       "SourceType": "Discovered",
@@ -255,12 +272,12 @@
       "OriginalItemSpec": "wwwroot\\img\\Done-Sign2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Picture1.jpg",
+      "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\f7740248e7aa48ff8ee68794e4fe3380.jpg",
       "SourceId": "Visual Project",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\",
       "BasePath": "_content/Visual Project",
-      "RelativePath": "img/Picture1.jpg",
+      "RelativePath": "img/f7740248e7aa48ff8ee68794e4fe3380.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -269,7 +286,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Picture1.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\f7740248e7aa48ff8ee68794e4fe3380.jpg"
     },
     {
       "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\room-1.jpg",
@@ -474,23 +491,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\testimonial-4.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\video.jpg",
-      "SourceId": "Visual Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\",
-      "BasePath": "_content/Visual Project",
-      "RelativePath": "img/video.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\video.jpg"
     },
     {
       "Identity": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\js\\main.js",

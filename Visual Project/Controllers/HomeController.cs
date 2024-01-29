@@ -13,9 +13,11 @@ namespace Visual_Project.Controllers
     {
 
         private readonly HotelDbContext DbContext;
+       
         public HomeController(HotelDbContext context)
         {
             DbContext = context;
+          
         }
      
       
@@ -41,6 +43,7 @@ namespace Visual_Project.Controllers
         public IActionResult Login(UserLogin user)
         {
             
+            Console.WriteLine(BCrypt.Net.BCrypt.EnhancedHashPassword(user.Password,13));
                 int userType = 0;
                 var is_Guest = DbContext.Guests.Any(guest => guest.Username == user.Username);
                 var is_Admin = DbContext.Admins.Any(admin => admin.Username == user.Username);
@@ -111,27 +114,11 @@ namespace Visual_Project.Controllers
             return View();
         }
        
-        [HttpGet]
-        public IActionResult Signup()
-        {
-            return View();
-        }
+       
 
-        [HttpPost]
-        public IActionResult Signup(Guest guest)
-        {
-            if (ModelState.IsValid)
-            {
-                guest.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(guest.Password, 13);
-                DbContext.Guests.Add(guest);
-                DbContext.SaveChanges();
-                if(HttpContext.Session.GetString("Type")!="Guest"&& !HttpContext.Session.GetString("Type").IsNullOrEmpty())
-                 return View("Index");
-                else  return View("Login");
-            }
-            return View();
-        }
-      
+
+
+
         [HttpGet]
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

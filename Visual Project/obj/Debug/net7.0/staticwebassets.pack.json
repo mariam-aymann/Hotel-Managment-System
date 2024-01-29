@@ -25,12 +25,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Done-Sign2.jpg",
-      "PackagePath": "staticwebassets\\img\\Done-Sign2.jpg"
+      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\1.jpeg",
+      "PackagePath": "staticwebassets\\img\\1.jpeg"
     },
     {
-      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Picture1.jpg",
-      "PackagePath": "staticwebassets\\img\\Picture1.jpg"
+      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Done-Sign2.jpg",
+      "PackagePath": "staticwebassets\\img\\Done-Sign2.jpg"
     },
     {
       "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\Team.JPG",
@@ -59,6 +59,10 @@
     {
       "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\carousel-2.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\f7740248e7aa48ff8ee68794e4fe3380.jpg",
+      "PackagePath": "staticwebassets\\img\\f7740248e7aa48ff8ee68794e4fe3380.jpg"
     },
     {
       "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\room-1.jpg",
@@ -103,10 +107,6 @@
     {
       "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\testimonial-4.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\img\\video.jpg",
-      "PackagePath": "staticwebassets\\img\\video.jpg"
     },
     {
       "Id": "C:\\Users\\Mariam Adel\\Desktop\\Hotel-Managment-System\\Visual Project\\wwwroot\\js\\main.js",
